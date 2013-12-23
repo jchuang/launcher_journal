@@ -6,4 +6,8 @@ class CategoriesController < ApplicationController
     @categories = Category.all.alphabetical
   end
 
+  def new
+    @category = Category.new
+  end
+
 end

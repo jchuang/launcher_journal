@@ -40,8 +40,9 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry = Entry.find(params[:id])
+
     @entry.delete
-    redirect_to entries_url
+    redirect_to entries_path
   end
 
   private

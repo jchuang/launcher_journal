@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @entries = Entry.all.order(created_at: :desc)
+    @entries = Entry.all.most_recent_first
   end
 
   def show

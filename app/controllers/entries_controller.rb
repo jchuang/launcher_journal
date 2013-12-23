@@ -25,8 +25,12 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.find(params[:id])
+  end
 
-    if @entry.update
+  def update
+    @entry = Entry.find(params[:id])
+
+    if @entry.update(entry_params)
       redirect_to @entry, notice: 'Entry was successfully updated.'
     else
       render action: 'edit'

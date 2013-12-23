@@ -1,3 +1,8 @@
+<p id="notice"><%= notice %></p>
+
 <p>Date Created: <%= @entry.created_at %></p>
 <p>Title: <%= @entry.title %></p>
 <p><%= @entry.content %></p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

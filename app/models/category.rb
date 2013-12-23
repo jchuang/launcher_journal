@@ -4,4 +4,7 @@ class Category < ActiveRecord::Base
 
   has_many :entries, inverse_of: :category, dependent: :nullify
 
+  def self.alphabetical
+    order(:name)
+  end
 end

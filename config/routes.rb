@@ -1,6 +1,7 @@
 LauncherJournal::Application.routes.draw do
 
   resources :entries
+  resources :categories
 
   root 'entries#index'
 

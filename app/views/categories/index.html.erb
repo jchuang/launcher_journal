@@ -1,0 +1,19 @@
+<h1>Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th># of Journal Entries</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+    <tbody>
+    <%= render partial: 'category', collection: @categories %>
+  </tbody>
+</table>
+
+<p><%= link_to 'New Category', new_category_path %></p>

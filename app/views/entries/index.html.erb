@@ -1,0 +1,14 @@
+<h1>Journal Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date Created</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'entry', collection: @entries %>
+  </tbody>
+</table>

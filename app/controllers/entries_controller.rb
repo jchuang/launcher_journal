@@ -6,15 +6,7 @@ class EntriesController < ApplicationController
     @entries = Entry.all.most_recent_first
   end
 
-  def show
-    @entry = Entry.find(params[:id])
-  end
-
   def new
-    @entry = Entry.new
-  end
-
-  def edit
   end
 
   def create
@@ -25,6 +17,26 @@ class EntriesController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+  def show
+    @entry = Entry.find(params[:id])
+  end
+
+  def edit
+    @entry = Entry.find(params[:id])
+
+    if @entry.update
+      redirect_to @entry, notice: 'Entry was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.delete
+    redirect_to entries_url
   end
 
   private

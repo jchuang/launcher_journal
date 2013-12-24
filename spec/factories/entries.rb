@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :entry do
-    title "MyString"
-    content "MyText"
-    category_id 1
+    title "entry title"
+    content "entry content"
+    category
   end
 end

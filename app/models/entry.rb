@@ -9,4 +9,12 @@ class Entry < ActiveRecord::Base
     order(created_at: :desc)
   end
 
+  def display_category
+    if category.nil?
+      'None'
+    else
+      category.name
+    end
+  end
+
 end
